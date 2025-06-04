@@ -1,0 +1,14 @@
+name: Test
+
+on: [push]
+jobs:
+  Io-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Change mode of sh files
+        run: chmod +x GCDFinder.sh Test_GCDFinder.sh
+      - name: Run the tests
+        run: ./Test_GCDFinder.sh
+
